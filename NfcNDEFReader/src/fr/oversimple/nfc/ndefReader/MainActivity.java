@@ -1,5 +1,6 @@
-package fr.oversimple.nfc.urlReader;
+package fr.oversimple.nfc.ndefReader;
 
+import fr.oversimple.nfc.urlReader.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,10 +8,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class MainActivity extends Activity implements NfcUrlReaderListener{
+public class MainActivity extends Activity implements NfcNdefReaderListener{
 
 	 private TextView demoTextView;
-	 private NfcUrlReader nfcUrlReader;
+	 private NfcNdefReader nfcUrlReader;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +19,7 @@ public class MainActivity extends Activity implements NfcUrlReaderListener{
 		setContentView(R.layout.activity_main);
 		demoTextView = (TextView) findViewById(R.id.demoTextview);
 		
-        nfcUrlReader = new NfcUrlReader(this);
+        nfcUrlReader = new NfcNdefReader(this);
         
 		if(!nfcUrlReader.isNfcAvailableOnDevice()) {
 			Toast.makeText(this, "Nfc is not available on this device", Toast.LENGTH_SHORT).show();

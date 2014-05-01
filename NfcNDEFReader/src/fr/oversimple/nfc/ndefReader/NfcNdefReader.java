@@ -1,4 +1,4 @@
-package fr.oversimple.nfc.urlReader;
+package fr.oversimple.nfc.ndefReader;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
@@ -41,15 +41,15 @@ import android.util.Log;
  * @author Julien Hatin
  * 
  */
-public class NfcUrlReader {
+public class NfcNdefReader {
 
 	private static final String TAG = "NfcUrlReader";
 	private static final String MIME_TEXT_PLAIN = "text/plain";
 
 	private NfcAdapter nfcAdapter;
-	private NfcUrlReaderListener listener;
+	private NfcNdefReaderListener listener;
 
-	public NfcUrlReader(Context context) {
+	public NfcNdefReader(Context context) {
 		nfcAdapter = NfcAdapter.getDefaultAdapter(context);
 	}
 
@@ -126,7 +126,7 @@ public class NfcUrlReader {
 				techList);
 	}
 
-	public void setNfcUrlReaderListener(NfcUrlReaderListener listener) {
+	public void setNfcUrlReaderListener(NfcNdefReaderListener listener) {
 		this.listener = listener;
 	}
 
